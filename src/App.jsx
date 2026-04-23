@@ -1,10 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
+import Category from "./components/category/Category";
+import CategoryList from "./components/category-list/CategoryList";
 // bugfix
 
 const Home = () => <div>
   <Hero />
+  <Category />
+  <CategoryList />
 </div>;
 const About = () => <div>Страница О нас</div>;
 const Contact = () => <div>Наши контакты</div>;
