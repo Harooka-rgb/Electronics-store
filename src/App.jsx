@@ -3,12 +3,14 @@ import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Category from "./components/category/Category";
 import CategoryList from "./components/category-list/CategoryList";
+import ProductList from "./components/product-list/ProductList";
 // bugfix
 
 const Home = () => <div>
   <Hero />
   <Category />
   <CategoryList />
+  <ProductList />
 </div>;
 const About = () => <div>Страница О нас</div>;
 const Contact = () => <div>Наши контакты</div>;
@@ -26,6 +28,8 @@ const App = () => {
       </Routes>
     </div>
   );
+
+  
 };
 
 export default App;

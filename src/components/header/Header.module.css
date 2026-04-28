@@ -1,15 +1,20 @@
 .header__top {
     display: flex;
     align-items: center;
-    
+    padding: 16px 20px;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .header__search {
     background-color: #F5F5F5;
     position: relative;
     border-radius: 8px;
-    width: 400px;
-    margin: 16px;
+    width: 340px;
+    margin: 0;
+    flex: 1;
+    min-width: 200px;
 }
 
 .header__search input {
@@ -18,7 +23,7 @@
     outline: none;
     width: 100%;
     margin: 0;
-    padding: 12px 16px 12px 42px;
+    padding: 10px 14px 10px 40px;
     color: #1f1f1f;
     font-size: 14px;
 }
@@ -32,26 +37,30 @@
 }
 
 .header__cart {
-    margin-left: 16px;
+    margin-left: 0;
 }
 
 .header__logo {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: bold;
-    margin-right: 16px;
-    margin-left: 145px;
+    margin-right: 0;
+    margin-left: 12%;
+    flex-shrink: 0;
 }
 
 .header__nav {
     display: flex;
-    gap: 50px;
-    margin-left: 16px;
+    gap: 40px;
+    margin-left: 0;
+    flex: 1;
+    min-width: 300px;
 }
 
 .header__nav a {
     text-decoration: none;
     color: gray;
-    font-size: 16px;
+    font-size: 15px;
+    white-space: nowrap;
 }
 
 .header__nav a:hover {
@@ -61,15 +70,144 @@
 
 .header__buttons {
     display: flex;
-    gap: 16px;
-    margin-left: 50px;
+    gap: 14px;
+    margin-left: 0;
+    margin-right: 12%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1200px) {
+    .header__top {
+        padding: 12px 16px;
+    }
+
+    .header__logo {
+        font-size: 20px;
+    }
+
+    .header__search {
+        width: 280px;
+    }
+
+    .header__nav {
+        gap: 32px;
+        min-width: auto;
+    }
+
+    .header__nav a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header__top {
+        flex-wrap: wrap;
+        order: 1;
+    }
+
+    .header__logo {
+        order: 1;
+        flex-basis: auto;
+    }
+
+    .header__search {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 8px;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .header__nav {
+        order: 2;
+        gap: 24px;
+        flex-basis: auto;
+        flex: 0;
+        min-width: auto;
+    }
+
+    .header__buttons {
+        order: 2;
+        flex-basis: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__top {
+        padding: 12px 12px;
+        gap: 12px;
+    }
+
+    .header__logo {
+        font-size: 18px;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__search {
+        order: 2;
+        flex-basis: 100%;
+        margin-top: 8px;
+        width: 100%;
+        min-width: auto;
+    }
+
+    .header__buttons {
+        order: 3;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__top {
+        padding: 10px 8px;
+        gap: 8px;
+    }
+
+    .header__logo {
+        font-size: 16px;
+    }
+
+    .header__logo img {
+        max-width: 30px;
+    }
+
+    .header__search {
+        width: 100%;
+    }
+
+    .header__search input {
+        padding: 8px 12px 8px 32px;
+        font-size: 13px;
+    }
+
+    .searchIcon {
+        left: 10px;
+    }
+
+    .header__buttons {
+        gap: 8px;
+    }
+
+    .header__buttons span {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__buttons img {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .header__bottom {
     display: flex;
     justify-content: center;
-    padding: 18px 24px;
+    padding: 16px 12px;
     background-color: #2e2e2e;
+    overflow-x: auto;
 }
 
 .header__categories {
@@ -80,13 +218,40 @@
     flex-wrap: wrap;
 }
 
+@media (max-width: 768px) {
+    .header__bottom {
+        padding: 12px 8px;
+        gap: 8px;
+    }
+
+    .header__categories {
+        gap: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__bottom {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .header__categories {
+        gap: 16px;
+    }
+
+    .categoryItem {
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+}
+
 .categoryItem {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
     color: #d9d9d9;
-    font-size: 14px;
+    font-size: 13px;
     transition: color 0.2s ease;
 }
 

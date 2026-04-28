@@ -1,3 +1,333 @@
 .category {
-    height: 720px;
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  margin-top: 72px;
+}
+
+.categoryLeft {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 0.62fr;
+}
+
+.categoryPlaystation {
+  grid-column: 1 / 3;
+  background-color: #f3f3f3;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  padding: 52px 44px 48px 240px;
+  display: flex;
+  align-items: center;
+}
+
+.playstationContent {
+  max-width: 315px;
+}
+
+.playstationContent h3 {
+  margin: 0 0 8px;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #101010;
+}
+
+.playstationContent p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #6f6f6f;
+}
+
+.categoryAirpods,
+.categoryVision {
+  min-height: 230px;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 24px 20px 24px 112px;
+}
+
+.categoryAirpods {
+  background-color: #f7f7f7;
+}
+
+.categoryVision {
+  background-color: #2d2d2f;
+}
+
+.smallCardContent h3 {
+  margin: 0 0 8px;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.12;
+  color: #151515;
+}
+
+.smallCardContent p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #767676;
+}
+
+.categoryVision .smallCardContent h3 {
+  color: #f0f0f0;
+}
+
+.categoryVision .smallCardContent p {
+  color: #a9a9a9;
+}
+
+.categoryLaptop {
+  background-color: #ededed;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 54px 44px;
+  display: flex;
+  align-items: center;
+}
+
+.categoryLaptop > div {
+  max-width: 380px;
+  margin-right: auto;
+}
+
+.categoryLaptop h2 {
+  font-size: 64px;
+  font-weight: 300;
+  margin: 0 0 10px;
+  color: #171717;
+  line-height: 1.08;
+}
+
+.categoryLaptop h2 span {
+  font-weight: 600;
+}
+
+.categoryLaptop p {
+  font-size: 15px;
+  color: #727272;
+  line-height: 1.5;
+  margin: 0 0 28px;
+}
+
+.categoryLaptop button {
+  width: 190px;
+  height: 56px;
+  border: 1.5px solid #1f1f1f;
+  background-color: transparent;
+  color: #111;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.categoryLaptop button:hover {
+  background-color: #151515;
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .category {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryPlaystation {
+    padding: 44px 36px 40px 200px;
+    background-position: left center;
+    
+  }
+
+  .categoryPlaystation h3 {
+    font-size: 44px;
+  }
+
+  .categoryAirpods,
+  .categoryVision {
+    padding: 20px 18px 20px 100px;
+  }
+
+  .categoryLaptop {
+    min-height: 380px;
+    padding: 48px 36px;
+  }
+
+  .categoryLaptop h2 {
+    font-size: 52px;
+  }
+
+  .categoryLaptop button {
+    width: 170px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .categoryPlaystation {
+    padding: 40px 32px 36px 160px;
+    
+  }
+
+  .playstationContent h3 {
+    font-size: 44px;
+  }
+
+  .categoryAirpods,
+  .categoryVision {
+    padding: 20px 16px 20px 90px;
+  }
+
+  .smallCardContent h3 {
+    font-size: 32px;
+  }
+
+  .categoryLaptop {
+    padding: 40px 32px;
+    min-height: 320px;
+  }
+
+  .categoryLaptop h2 {
+    font-size: 48px;
+  }
+
+  .categoryLaptop button {
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category {
+    margin-top: 48px;
+  }
+
+  .categoryLeft {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .categoryPlaystation {
+    grid-column: auto;
+    min-height: 260px;
+    padding: 28px 20px 24px 140px;
+    background-position: left center;
+  }
+
+  .playstationContent {
+    max-width: 100%;
+  }
+
+  .playstationContent h3 {
+    font-size: 32px;
+    margin-bottom: 6px;
+  }
+
+  .playstationContent p {
+    font-size: 13px;
+  }
+
+  .categoryAirpods,
+  .categoryVision {
+    min-height: 160px;
+    padding: 16px 14px 16px 90px;
+  }
+
+  .smallCardContent h3 {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .smallCardContent p {
+    font-size: 12px;
+  }
+
+  .categoryLaptop {
+    padding: 32px 20px;
+    min-height: 280px;
+  }
+
+  .categoryLaptop > div {
+    max-width: 100%;
+  }
+
+  .categoryLaptop h2 {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+
+  .categoryLaptop p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .categoryLaptop button {
+    width: 140px;
+    height: 44px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category {
+    margin-top: 40px;
+  }
+
+  .categoryPlaystation {
+    min-height: 240px;
+    padding: 24px 16px 20px 110px;
+    background-position: left center;
+  }
+
+  .playstationContent h3 {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  .playstationContent p {
+    font-size: 12px;
+  }
+
+  .categoryAirpods,
+  .categoryVision {
+    min-height: 140px;
+    padding: 14px 12px 14px 80px;
+  }
+
+  .smallCardContent h3 {
+    font-size: 20px;
+    margin-bottom: 3px;
+  }
+
+  .smallCardContent p {
+    font-size: 11px;
+  }
+
+  .categoryLaptop {
+    padding: 24px 16px;
+    min-height: 240px;
+    background-position: right center;
+  }
+
+  .categoryLaptop h2 {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .categoryLaptop p {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .categoryLaptop button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
 }

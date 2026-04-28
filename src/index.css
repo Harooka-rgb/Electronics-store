@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -6,8 +6,35 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #000;
+  background: #fff;
+}
+
+#root {
+  min-height: 100vh;
+}
 
 .app-container {
-  width: 1120px;
+  width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    width: min(100%, calc(100% - 32px));
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    width: min(100%, calc(100% - 24px));
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    width: min(100%, calc(100% - 16px));
+  }
 }

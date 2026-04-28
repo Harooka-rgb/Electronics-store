@@ -1,0 +1,190 @@
+.section {
+  padding: 80px 64px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 26px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #000;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actionButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: #111;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #f0f0f0;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  height: 118px;
+  border-radius: 15px;
+  background-color: #ededed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+}
+
+.card img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 500;
+  color: #111;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .section {
+    padding: 70px 48px 0;
+  }
+
+  .list {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 60px 32px 0;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .card {
+    height: 110px;
+  }
+
+  .card img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 20px 0;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    height: 100px;
+  }
+
+  .card img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 40px 16px 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .card {
+    height: 90px;
+  }
+
+  .card img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .card p {
+    font-size: 11px;
+  }
+
+  .actionButton {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+}
