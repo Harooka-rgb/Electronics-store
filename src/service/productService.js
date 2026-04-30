@@ -35,6 +35,11 @@ export const updateProduct = async (id, updates) => {
     return data
 }
 
+export const createProduct = async (product) => {
+    const { data: products } = await supabase.from('products').insert(product)
+    return products
+}
+
 
 
 

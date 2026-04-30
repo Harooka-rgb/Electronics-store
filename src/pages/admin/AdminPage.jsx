@@ -1,6 +1,6 @@
 import {
   Layout, Menu, theme, Typography, Table,
-  Tag, Button, Space, Popconfirm, message, Avatar, Modal, Form, Input
+  Tag, Button, Space, Popconfirm, message, Avatar, Modal, Form, Input, Flex
 } from 'antd';
 import {
   AppstoreOutlined,
@@ -12,6 +12,7 @@ import {
 import { useState, useEffect } from 'react';
 import { getCategoryList, deleteCategory, updateCategory } from '../../service/categoryListApi';
 import { getProducts, deleteProduct, updateProduct } from '../../service/productService';
+import { useNavigate } from 'react-router-dom';
 
 const { Header, Content, Sider } = Layout;
 const { Title } = Typography;
@@ -23,6 +24,8 @@ const AdminPage = () => {
   const [editingRecord, setEditingRecord] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [form] = Form.useForm();
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     getCategoryList().then(res => 
@@ -178,6 +181,7 @@ const AdminPage = () => {
       );
     }
 
+
     const productColumns = [
   {
     title: 'Фото',
@@ -236,8 +240,14 @@ const AdminPage = () => {
 
     return (
       <>
+      <Flex align="center" justify="space-between">
         <Title level={2}>Список продуктов</Title>
+        <Button type="primary" onClick={() => {
+          navigate("/admin/add-product")
+        }}>Добавить продукт</Button>
+      </Flex>
         <Table dataSource={productData} columns={productColumns} rowKey="id" />
+
       </>
     );
   };

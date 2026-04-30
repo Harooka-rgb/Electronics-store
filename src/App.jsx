@@ -5,6 +5,7 @@ import Category from "./components/category/Category";
 import CategoryList from "./components/category-list/CategoryList";
 import ProductList from "./components/product-list/ProductList";
 import AdminPage from "./pages/admin/AdminPage";
+import AdminProductCreate from "./pages/admin/AdminProductCreate";
 // bugfix
 
 const Home = () => <div>
@@ -41,6 +42,7 @@ const App = () => {
         </Route>
 
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/admin/add-product" element={<AdminProductCreate />} />
       </Routes>
     </div>
   );
