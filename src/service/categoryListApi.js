@@ -11,11 +11,29 @@ const categoryListApi = {
         const { data: categories } = await supabase.from('category_list').insert
         (category)
         return categories
+    },
+    deleteCategory: async (id) => {
+        const { data, error } = await supabase
+            .from('category_list')
+            .delete()
+            .eq('id', id)
+        if (error) throw error
+        return data
+    },
+    updateCategory: async (id, updates) => {
+        const { data, error } = await supabase
+            .from('category_list')
+            .update(updates)
+            .eq('id', id)
+        if (error) throw error
+        return data
     }
 }
 
 
 export const {
     getCategoryList,
-    createCategory
+    createCategory,
+    deleteCategory,
+    updateCategory
 } = categoryListApi

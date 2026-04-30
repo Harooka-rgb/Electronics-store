@@ -17,6 +17,24 @@ export const getProducts = async (category_id) => {
     return products;
 }
 
+export const deleteProduct = async (id) => {
+    const { data, error } = await supabase
+        .from('products')
+        .delete()
+        .eq('id', id)
+    if (error) throw error
+    return data
+}
+
+export const updateProduct = async (id, updates) => {
+    const { data, error } = await supabase
+        .from('products')
+        .update(updates)
+        .eq('id', id)
+    if (error) throw error
+    return data
+}
+
 
 
 

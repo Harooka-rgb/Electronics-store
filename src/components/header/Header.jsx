@@ -14,6 +14,7 @@ import { LuGamepad2 } from "react-icons/lu";
 import Like from "../../assets/like.svg"
 import Cart from "../../assets/cart.svg"
 import User from "../../assets/user.svg"
+import { Link } from "react-router-dom";
 
 
 const menuTop = [
@@ -84,7 +85,7 @@ const Header = () => {
                     </span>
                 </div>
                 <div className={styles.header__nav}>
-                    {menuTop.map(item => <a href={item.link}>{item.name}</a>)}
+                    {menuTop.map(item => <Link to={item.link}>{item.name}</Link>)}
                 </div>
                 <div className={styles.header__buttons}>
                     <span>
@@ -94,7 +95,9 @@ const Header = () => {
                         <img src={Cart} alt="cart" />
                     </span>
                     <span>
-                        <img src={User} alt="user" />
+                        <Link to="/admin">
+                            <img src={User} alt="user" />
+                        </Link>
                     </span>
                 </div>
             </div>
@@ -103,12 +106,12 @@ const Header = () => {
                     {menuBottom.map(item => {
                         const Icon = item.icon
                         return (
-                            <a href={item.link} key={item.name} className={styles.categoryItem}>
+                            <Link to={item.link} key={item.name} className={styles.categoryItem}>
                                 <span className={styles.categoryIcon}>
                                     <Icon size={18} />
                                 </span>
                                 <span>{item.name}</span>
-                            </a>
+                            </Link  >
                         )
                     })}
                 </div>
